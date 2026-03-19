@@ -1,0 +1,192 @@
+/* ============================= */
+/* GOOGLE FONTS & GLOBAL STYLES */
+/* ============================= */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+.navbar {
+    background: #111;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: #ffdd00;
+    margin: 0;
+}
+
+/* ============================= */
+/* HERO SECTION - SIDE SCROLL IMAGES ONLY */
+/* ============================= */
+/* HERO SCROLL - FULL SCREEN SIDE */
+.hero-scroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* WRAPPER */
+.hero-wrapper {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+/* HIDE SCROLLBAR */
+.hero-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* SLIDES */
+.hero-slide {
+    min-width: 100%;
+    height: 100vh;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 20px;
+
+    scroll-snap-align: start;
+}
+
+/* IMAGE */
+.hero-slide img {
+    width: 250px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.hero-slide img:hover {
+    transform: scale(1.1);
+}
+
+/* TEXT */
+.hero-slide h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+}
+
+.hero-slide p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* BACKGROUNDS (each slide different) */
+.hero-slide:nth-child(1) {
+    background: radial-gradient(circle, #1a0000, #000);
+}
+.hero-slide:nth-child(2) {
+    background: linear-gradient(135deg, #1f1a00, #000);
+}
+.hero-slide:nth-child(3) {
+    background: linear-gradient(135deg, #001f1f, #000);
+}
+.hero-slide:nth-child(4) {
+    background: linear-gradient(135deg, #001a00, #000);
+}
+
+/* Optional scrollbar style */
+.hero-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.hero-scroll::-webkit-scrollbar-thumb {
+    background: #ffdd00;
+    border-radius: 4px;
+}
+
+.hero-scroll::-webkit-scrollbar-track {
+    background: #111;
+}
+
+/* ============================= */
+/* ITEMS GRID SECTION */
+/* ============================= */
+.items-section {
+    padding: 50px 20px;
+    background: #111;
+}
+.items-section h2 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #ffdd00;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.item-card {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px #ffdd00;
+}
+
+.item-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+.btn-buy {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    background: #ffdd00;
+    color: #111;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-buy:hover {
+    background: #e6c200;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #aaa;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DuckSMP - Crates</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color:#fff;
+  min-height:100vh;
+}
+/* Header */
+header{
+  background:#000;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.5);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+header h1{color:#22c55e;font-size:28px;}
+nav{display:flex;gap:20px;}
+nav a{
+  color:white;text-decoration:none;font-weight:bold;padding:8px 12px;position:relative;transition:0.3s;
+}
+nav a::after{
+  content:"";position:absolute;width:0;height:2px;bottom:0;left:0;background-color:#22c55e;transition:0.3s;
+}
+nav a:hover::after{width:100%;}
+
+/* Page Heading */
+.page-heading{
+  text-align:center;
+  margin:50px 20px;
+  font-size:3rem;
+  color:#ffd700;
+  text-shadow:2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Crates container */
+.crates-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  padding:20px;
+}
+
+/* Individual Crate Card */
+.crate-card{
+  background: rgba(0,0,0,0.5);
+  border-radius:15px;
+  width:250px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+  cursor:pointer;
+}
+.crate-card:hover{
+  transform: translateY(-8px) scale(1.05);
+  box-shadow:0 12px 30px rgba(0,0,0,0.7);
+}
+
+.crate-card h3{
+  font-size:1.5rem;
+  margin-bottom:10px;
+}
+.crate-card p{
+  margin-bottom:15px;
+  font-size:0.95rem;
+  color:#ddd;
+}
+
+/* Rarity colors */
+.common{color:#a0a0a0;}
+.rare{color:#00bfff;}
+.epic{color:#bf00ff;}
+.legendary{color:#ffd700;}
+
+.crate-card button{
+  padding:12px 25px;
+  border:none;
+  border-radius:8px;
+  font-weight:700;
+  background:#22c55e;
+  color:#000;
+  cursor:pointer;
+  transition:0.3s;
+}
+.crate-card button:hover{
+  background:#00ffd5;
+  transform:translateY(-3px);
+}
+.crate-card button:disabled{
+  background:#777;
+  cursor:not-allowed;
+}
+
+/* Footer */
+footer{
+  background:#000;
+  text-align:center;
+  padding:20px;
+  margin-top:50px;
+  font-size:0.9rem;
+  color:#ccc;
+}
+
+/* Scroll Animation */
+.section{opacity:0;transform:translateY(50px);transition:all 0.8s ease-out;}
+.section.show{opacity:1;transform:translateY(0);}
+
+/* Responsive */
+@media(max-width:768px){
+  .crates-container{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>DuckSMP</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="vip.html">VIP Rank</a>
+    <a href="crates.html">Crates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="page-heading">Crates</div>
+
+<div class="crates-container section">
+  <!-- Common -->
+  <div class="crate-card common">
+    <h3>Common Crate</h3>
+    <p>Contains basic items to get you started in the game.</p>
+    <button class="open-crate-btn" data-sound="commonSound" data-link="common.html">Open Crate</button>
+    <audio id="commonSound" src="mine1.mp3"></audio>
+  </div>
+  <!-- Rare -->
+  <div class="crate-card rare">
+    <h3>Rare Crate</h3>
+    <p>Contains rare items and some valuable resources.</p>
+    <button class="open-crate-btn" data-sound="rareSound" data-link="rare.html">Open Crate</button>
+    <audio id="rareSound" src="mine1.mp3"></audio>
+  </div>
+  <!-- Epic -->
+  <div class="crate-card epic">
+    <h3>Epic Crate</h3>
+    <p>High tier rewards for experienced players.</p>
+    <button class="open-crate-btn" data-sound="epicSound" data-link="epic.html">Open Crate</button>
+    <audio id="epicSound" src="mine1.mp3"></audio>
+  </div>
+  <!-- Legendary -->
+  <div class="crate-card legendary">
+    <h3>Legendary Crate</h3>
+    <p>Top tier items and unique cosmetic rewards!</p>
+    <button class="open-crate-btn" data-sound="legendarySound" data-link="legendary.html">Open Crate</button>
+    <audio id="legendarySound" src="mine1.mp3"></audio>
+  </div>
+</div>
+
+<footer>
+  © 2026 DuckSMP Server | All rights reserved
+</footer>
+
+<script>
+// Scroll animation
+const sections = document.querySelectorAll('.section');
+function scrollAnimation(){
+  const triggerBottom = window.innerHeight * 0.85;
+  sections.forEach(section=>{
+    const sectionTop = section.getBoundingClientRect().top;
+    if(sectionTop < triggerBottom && sectionTop > -section.offsetHeight){
+      section.classList.add('show');
+    }else{
+      section.classList.remove('show');
+    }
+  });
+}
+window.addEventListener('scroll',scrollAnimation);
+scrollAnimation();
+
+// Sound + Redirect Logic
+document.querySelectorAll('.open-crate-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const soundId = btn.dataset.sound;
+    const link = btn.dataset.link;
+    const audio = document.getElementById(soundId);
+
+    btn.disabled = true; // disable button
+    audio.currentTime = 0; // reset
+    audio.play();
+
+    audio.addEventListener('ended', ()=>{
+      window.location.href = link; // redirect after sound ends
+    }, {once:true});
+  });
+});
+</script>
+
+</body>
+</html>

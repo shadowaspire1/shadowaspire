@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShadowAspire - Store</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><h2>🌌 ShadowAspire</h2></div>
+        <ul class="nav-menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="ranks.html">Ranks</a></li>
+            <li><a href="discord.html">Discord</a></li>
+            <li><a href="store.html" class="store-btn">Store</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="store-hero">
+    <h1>🛒 Shadow Store</h1>
+    <p>Upgrade your gameplay with exclusive items</p>
+</section>
+
+<!-- STORE CATEGORIES -->
+<section class="store-section">
+    <div class="container">
+
+        <!-- RANKS -->
+        <h2>🏅 Ranks</h2>
+        <div class="store-grid">
+
+            <div class="store-card vip">
+                <h3>VIP</h3>
+                <p>Basic perks & commands</p>
+                <span>$5</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+
+            <div class="store-card pro">
+                <h3>PRO</h3>
+                <p>Advanced abilities</p>
+                <span>$10</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+
+            <div class="store-card elite">
+                <h3>ELITE</h3>
+                <p>Ultimate power & features</p>
+                <span>$20</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+
+        </div>
+
+        <!-- ITEMS -->
+        <h2>💎 Items</h2>
+        <div class="store-grid">
+
+            <div class="store-card">
+                <h3>⚔️ Epic Sword</h3>
+                <p>High damage weapon</p>
+                <span>$3</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+
+            <div class="store-card">
+                <h3>🛡️ Armor Set</h3>
+                <p>Full protection gear</p>
+                <span>$4</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+
+        </div>
+
+        <!-- CRATES -->
+        <h2>📦 Crates</h2>
+        <div class="store-grid">
+
+            <div class="store-card">
+                <h3>Basic Crate</h3>
+                <p>Common rewards</p>
+                <span>$2</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+
+            <div class="store-card">
+                <h3>Legend Crate</h3>
+                <p>Rare items inside</p>
+                <span>$8</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 ShadowAspire Store</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>
